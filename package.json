@@ -1,8 +1,8 @@
 {
-  "name": "@linea-directa/ui",
+  "name": "@crisak/ui",
   "version": "0.0.5",
   "type": "module",
-  "author": "Linea Directa",
+  "author": "Crisak",
   "license": "ISC",
   "scripts": {
     "build": "tsc && vite build",

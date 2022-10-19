@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import path from 'path'
 
-const LIB_NAME = 'linea-directa'
+const LIB_NAME = 'crisak'
 
 // https://vitejs.dev/config/
 export default defineConfig({

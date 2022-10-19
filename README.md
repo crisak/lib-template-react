@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-$ npm install @linea-directa/ui
+$ npm install @crisak/ui
 ```
 
 #### Import stylesheets
@@ -11,13 +11,13 @@ $ npm install @linea-directa/ui
 The following line can be included in your `src/index.(js|tsx)` or `src/App.(js|tsx)`
 
 ```jsx
-import '@linea-directa/ui/dist/style.css'
+import '@crisak/ui/dist/style.css'
 ```
 
 #### Usage
 
 ```jsx
-import { Input } from '@linea-directa/ui'
+import { Input } from '@crisak/ui'
 
 export default function App() {
   return <Input />

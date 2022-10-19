@@ -30,77 +30,15 @@ export default defineConfig({
 
 </details>
 
+**Config pre-commit**
+
+```bash
+$ yarn prepare
+```
+
 ## 🚀 Publish library
 
 **Local machine**
-
-<details>
-<summary>Setup credentials on Windows</summary>
-
-- Install <a href="https://www.npmjs.com/package/vsts-npm-auth" target="_blank">vsts-npm-auth</a> as global dependency
-
-  ```bash
-  $ npm install -g vsts-npm-auth
-  ```
-
-- Then, run vsts-npm-auth to get an Azure Artifacts token added to your user-level .npmrc file
-
-  ```bash
-    $ vsts-npm-auth
-  ```
-
-</details>
-<details>
-<summary>Setup credentials on Linux or macOS</summary>
-
-- **Step 1**
-
-  Copy the code below to your user `~/.npmrc` file
-
-  ```js
-  registry=https://registry.npmjs.org/
-  ; begin auth token
-  //pkgs.dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_packaging/{AZURE_ARTIFACTS}/npm/registry/:username={YOUR_USERNAME}
-  //pkgs.dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_packaging/{AZURE_ARTIFACTS}/npm/registry/:_password={YOUR_TOKEN_IN_BASE_64}
-  //pkgs.dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_packaging/{AZURE_ARTIFACTS}/npm/registry/:email={YOUR_EMAIL}
-  //pkgs.dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_packaging/{AZURE_ARTIFACTS}/npm/:username={YOUR_USERNAME}
-  //pkgs.dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_packaging/{AZURE_ARTIFACTS}/npm/:_password={YOUR_TOKEN_IN_BASE_64}
-  //pkgs.dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_packaging/{AZURE_ARTIFACTS}/npm/:email={YOUR_EMAIL}
-  ; end auth token
-  ```
-
-- **Step 2**
-
-  Generate a <a href="https://dev.azure.com/LineaDirectaDevOps/FabricaLegacy/_artifacts/feed/npm-feed-test-1/connect/npm#:~:text=Generate%20a-,Personal%20Access%20Token,-with%20Packaging%20read" target="_blank">Personal Access Token</a> with `Packaging read` & `write scopes`.
-
-- **Step 3**
-
-  Base64 encode the personal access token from Step 2.
-
-  One safe and secure method of Base64 encoding a string is to:
-
-  - From a command/shell prompt run:
-
-    ```bash
-    node -e "require('readline') .createInterface({input:process.stdin,output:process.stdout,historySize:0}) .question('PAT> ',p => { b64=Buffer.from(p.trim()).toString('base64');console.log(b64);process.exit(); })"
-    ```
-
-  - Paste your personal access token value and press Enter/Return
-  - Copy the Base64 encoded value
-
-- **Step 4**
-
-  Replace both `{YOUR_TOKEN_IN_BASE_64}` values in your user `~/.npmrc` file with your personal access token from Step 3.
-
-- **Step 5**
-
-  Replace all `{AZURE_ARTIFACTS}` values in your user `~/.npmrc` file with the name of Feed configuration in Azure Artifacts.
-
-  Replace both `{YOUR_USERNAME}` values in your user `~/.npmrc` file with your username
-
-  Replace both `{YOUR_EMAIL}` values in your user `~/.npmrc` file with your email
-
-</details>
 
 Run for publish
 
